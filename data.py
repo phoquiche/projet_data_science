@@ -1,7 +1,21 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-# Read the CSV file and create a DataFrame
-df = pd.read_csv('car_insurance.csv')
-print(df['age'])
+# Importation des données
+data = pd.read_csv('car_insurance.csv')
 
-# Print the DataFrame
+# Examen des premières lignes et des informations sur les colonnes
+first_rows = data.head()
+info = data.info()
+description = data.describe()
+
+# Détection des valeurs manquantes
+missing_values = data.isna().sum()
+
+# Visualisation des distributions des variables numériques
+data.hist(bins=50, figsize=(20, 15))
+plt.show()
+
+first_rows, info, description, missing_values
+
+print(missing_values)
