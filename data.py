@@ -13,7 +13,10 @@ description = data.describe()
 missing_values = data.isna().sum()
 
 # Visualisation des distributions des variables numériques
-data.hist(bins=50, figsize=(20, 15))
+data = data.drop(columns=['id'])
+data = data.drop(columns=['outcome'])
+data = data.drop(columns=['children'])
+data.hist(bins=50, figsize=(20, 15), color='#ddfa12', ec='black')
 plt.show()
 
 first_rows, info, description, missing_values
