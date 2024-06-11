@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Importation des données
-data = pd.read_csv('car_insurance.csv')
+data = pd.read_csv('C:\\Users\\Aymeric\\Documents\\IMT\\DataSciences\\projet_data_science\\car_insurance.csv')
 
 # Examen des premières lignes et des informations sur les colonnes
 first_rows = data.head()
@@ -16,9 +16,14 @@ missing_values = data.isna().sum()
 data = data.drop(columns=['id'])
 data = data.drop(columns=['outcome'])
 data = data.drop(columns=['children'])
+data = data.drop(columns=['gender'])
+
+
 data.hist(bins=50, figsize=(20, 15), color='#ddfa12', ec='black')
 plt.show()
 
 first_rows, info, description, missing_values
 
 print(missing_values)
+
+
